@@ -62,32 +62,7 @@ jobs:
 
       - name: Setup Engines
         run: |
-          set -e
-
-          mkdir -p engines
-          cd engines
-
-          echo "⬇️ Downloading Stockfish"
-          curl -L -o stockfish.zip https://abrok.eu/stockfish/latest/linux/stockfish_x64_modern.zip
-
-          echo "📦 Unzipping"
-          unzip -o stockfish.zip
-
-          echo "🔍 Searching for stockfish binary"
-          STOCKFISH_BIN=$(find . -type f -name "stockfish*" ! -name "*.zip" | head -n 1)
-
-          if [ -z "$STOCKFISH_BIN" ]; then
-              echo "❌ Stockfish binary not found"
-              exit 1
-          fi
-
-          echo "✅ Found: $STOCKFISH_BIN"
-          mv "$STOCKFISH_BIN" ./stockfish
-
-          chmod +x ./stockfish
-
-          echo "♟️ Stockfish ready at engines/stockfish"
-          ./stockfish bench 1
+          chmod +x engines/stockfish
 
 
       - name: Inject Lichess Bot Token
