@@ -13,7 +13,6 @@ on:
         required: true
         options:
           - normal
-          - matchmaking
           - tournament
       tournament_id:
         description: 'Tournament ID (if tournament mode)'
