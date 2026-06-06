@@ -91,12 +91,8 @@ jobs:
           TEAM_ID="${{ github.event.inputs.team_id }}"
           PASSWORD="${{ github.event.inputs.password }}"
 
-          if [[ "$MODE" == "matchmaking" ]]; then
-              CMD="$CMD_BASE matchmaking"
-              echo "🤖 Running command: $CMD"
-              eval "$CMD"
-
-          elif [[ "$MODE" == "tournament" ]]; then
+          
+          if [[ "$MODE" == "tournament" ]]; then
               if [[ -z "$TOUR_ID" ]]; then
                   echo "⚠️ Tournament ID missing. Skipping."
               else
