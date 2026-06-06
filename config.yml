@@ -142,11 +142,6 @@ resign:
   consecutive_moves: 5                    # How many moves in a row the score has to be below the resign value.
   against_humans: true                    # Activate whether these settings should apply against humans.
 # min_rating: 2300                        # Minimum rating of opponent to resign.
-matchmaking:
-  delay: 120                               # Time in seconds the bot must be idle before a new challenge is started.
-  allow_matchmaking: false
-  challenge_mode: rated
-  
 challenge:                                # Incoming challenges.
   concurrency: 1                          # Number of games to play simultaneously.
   max_takebacks: 3                        # Maximum number of takebacks granted to a human.
