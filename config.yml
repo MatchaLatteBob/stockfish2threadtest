@@ -141,6 +141,33 @@ resign:
   score: -1000                            # If the score is less than or equal to this value, the bot resigns (in cp).
   consecutive_moves: 5                    # How many moves in a row the score has to be below the resign value.
   against_humans: true                    # Activate whether these settings should apply against humans.
+
+matchmaking:
+  delay: 120                               # Time in seconds the bot must be idle before a new challenge is started.
+  allow_matchmaking: false
+  challenge_mode: rated
+  timeout: 30
+  selection: weighted_random
+  types:
+    bullet_0_5:
+      enabled: true
+      tc: "0.5+0"      
+      variant: standard
+    blitz_3_0:
+      enabled: true
+      tc: "3+0"
+      variant: standard
+    rapid_8+0:
+      enabled: true
+      tc: "8+0"
+      variant: standard
+    0.5_chess960:
+      enabled: true
+      tc: "0.5+0"
+      variant: chess960
+
+
+
 # min_rating: 2300                        # Minimum rating of opponent to resign.
 challenge:                                # Incoming challenges.
   concurrency: 1                          # Number of games to play simultaneously.
